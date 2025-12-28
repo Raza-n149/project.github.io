@@ -963,8 +963,8 @@ span{
     cursor: pointer;
 }
 
-/* 12. form */
-#form{
+
+  #form{
     background: linear-gradient(261deg, rgba(255, 255, 255, 0.28) -114.85%, rgba(255, 255, 255, 0.00) 69.04%), #040613;
     display: inline-block;
     width: 100%;
@@ -1005,11 +1005,11 @@ span{
     transform: translateY(-50%);
 }
 .form_phone:before{
-    content: url(phone.svg);
+    content: url(imgs/phone.svg);
     width: 24px;
 }
 .form_mail:before{
-    content: url(mail.svg);
+    content: url(imgs/mail.svg);
     width: 28px;
 }
 
@@ -1077,150 +1077,7 @@ form button{
     width: 100%;
 }
 
-/* Стили для блока "Я не робот" (как на второй картинке) */
-.captcha-container {
-    margin: 20px 0;
-    padding: 12px;
-    background: #f9f9f9;
-    border-radius: 4px;
-    border: 1px solid #dcdcdc;
-    transition: all 0.3s ease;
-}
 
-.captcha-container:hover {
-    background: #f5f5f5;
-    border-color: #c6c6c6;
-}
-
-#captcha-checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #757575;
-    border-radius: 2px;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-    margin: 0;
-}
-
-#captcha-checkbox:checked {
-    background-color: #4285f4;
-    border-color: #4285f4;
-}
-
-#captcha-checkbox:checked::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-/* Стили для буквы R в круге */
-.captcha-r-circle {
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border: 1px solid #dcdcdc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #666;
-    margin-right: 10px;
-}
-
-/* Стили для текста "Я не робот" */
-.captcha-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Стили для ссылок */
-.captcha-links {
-    font-size: 10px;
-    color: #666;
-    display: flex;
-    gap: 5px;
-    margin-top: 2px;
-}
-
-.captcha-links a {
-    color: #1a0dab !important;
-    text-decoration: none;
-    border-right: 1px solid #dcdcdc;
-    padding-right: 5px;
-}
-
-.captcha-links a:last-child {
-    border-right: none;
-    padding-right: 0;
-}
-
-.captcha-links a:hover {
-    text-decoration: underline;
-}
-
-/* Стили для иконки reCAPTCHA справа */
-.captcha-icon-bg {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, 
-        #4285f4 0%, 
-        #34a853 25%, 
-        #fbbc05 50%, 
-        #ea4335 75%);
-    border-radius: 4px;
-    position: relative;
-}
-
-.captcha-icon-r {
-    width: 30px;
-    height: 30px;
-    background: #fff;
-    border-radius: 2px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-
-.captcha-icon-r div {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
-    font-family: Arial, sans-serif;
-}
-
-/* Стили для чекбокса при фокусе */
-#captcha-checkbox:focus {
-    outline: 2px solid #4285f4;
-    outline-offset: 1px;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .captcha-container {
-        padding: 10px;
-    }
-    
-    .captcha-container > div {
-        flex-wrap: wrap;
-    }
-}
 /* 13 */
 .razdel{
     height: 1px;
@@ -1601,65 +1458,5 @@ form button{
     #expertise h1{
         /* padding-left: 48%; */
         width: 585px;
-    }
-}
-
-/* Стили для блока "Я не робот" */
-.captcha-container {
-    transition: all 0.3s ease;
-}
-
-.captcha-container:hover {
-    background: #f0f0f0;
-    border-color: #ccc;
-}
-
-#captcha-checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #5f6368;
-    border-radius: 3px;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-    margin: 0;
-}
-
-#captcha-checkbox:checked {
-    background-color: #4285f4;
-    border-color: #4285f4;
-}
-
-#captcha-checkbox:checked::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.captcha-container a:hover {
-    text-decoration: underline;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .captcha-container {
-        padding: 10px;
-    }
-    
-    .captcha-container > div {
-        flex-wrap: wrap;
-    }
-    
-    .captcha-container svg {
-        width: 30px;
-        height: 30px;
     }
 }
