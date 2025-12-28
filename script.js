@@ -108,15 +108,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('form_send');
     const formMessage = document.getElementById('formMessage');
     const submitBtn = document.getElementById('send');
+    const captchaCheckbox = document.getElementById('captcha-checkbox');
+    const agreeCheckbox = document.getElementById('oznakomlen');
     
     if (form) {
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Проверка чекбокса
-            const agreeCheckbox = document.getElementById('oznakomlen');
+            // Проверка чекбокса "Я не робот"
+            if (!captchaCheckbox.checked) {
+                showMessage('Пожалуйста, подтвердите, что вы не робот', 'error');
+                captchaCheckbox.focus();
+                return false;
+            }
+            
+            // Проверка чекбокса согласия
             if (!agreeCheckbox.checked) {
                 showMessage('Пожалуйста, отметьте согласие на обработку персональных данных', 'error');
+                agreeCheckbox.focus();
                 return false;
             }
             
@@ -131,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Добавляем дополнительные данные
                 formData.append('_replyto', document.getElementById('email').value);
                 formData.append('agree', agreeCheckbox.checked ? 'Да' : 'Нет');
+                formData.append('captcha', captchaCheckbox.checked ? 'Подтверждено' : 'Не подтверждено');
                 
                 // Отправка через Formspree
                 const response = await fetch(form.action, {
@@ -144,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (response.ok) {
                     showMessage('✅ Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', 'success');
                     form.reset();
+                    
+                    // Сбрасываем чекбоксы
+                    captchaCheckbox.checked = false;
+                    agreeCheckbox.checked = false;
                     
                     // Очистка через 5 секунд
                     setTimeout(() => {
@@ -170,6 +184,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
             }
         });
+        
+        // Добавляем визуальный эффект при клике на чекбокс "Я не робот"
+        captchaCheckbox.addEventListener('change', function() {
+            const container = this.closest('.captcha-container');
+            if (this.checked) {
+                container.style.backgroundColor = '#e8f0fe';
+                container.style.borderColor = '#4285f4';
+            } else {
+                container.style.backgroundColor = '#f8f9fa';
+                container.style.borderColor = '#ddd';
+            }
+        });
     }
     
     function showMessage(text, type) {
@@ -182,6 +208,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-
-    });
-});
