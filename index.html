@@ -1192,57 +1192,21 @@ document.addEventListener('DOMContentLoaded', function() {
             <input type="hidden" name="org" value="Заявка с сайта Drupal-coder">
             <input type="hidden" name="_subject" value="Новая заявка на поддержку сайта">
             
-                <!-- Блок "Я не робот" -->
-    <div class="captcha-container" style="margin: 20px 0; padding: 12px; background: #f9f9f9; border-radius: 4px; border: 1px solid #dcdcdc;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <!-- Чекбокс -->
-            <div style="position: relative;">
-                <input type="checkbox" id="captcha-checkbox" name="captcha" 
-                       style="width: 18px; height: 18px; cursor: pointer; margin: 0;" required>
+            <div>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="agree" id="oznakomlen" required>
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">Отправляя заявку, я даю согласие на <a href="">обработку своих персональных данных</a></span>
+                </label>
             </div>
             
-            <!-- Текст и ссылки -->
-            <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 2px;">
-                    <!-- Буква R в круге -->
-                    <div style="width: 20px; height: 20px; background: #fff; border: 1px solid #dcdcdc; 
-                               border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-                               font-size: 12px; font-weight: bold; color: #666;">
-                        R
-                    </div>
-                    
-                    <span style="font-size: 14px; font-weight: bold; color: #333;">Я не робот</span>
-                </div>
-                
-                <!-- Ссылки -->
-                <div style="font-size: 10px; color: #666; display: flex; gap: 5px;">
-                    <a href="#" style="color: #1a0dab; text-decoration: none; border-right: 1px solid #dcdcdc; padding-right: 5px;">
-                        Конфиденциальность
-                    </a>
-                    <a href="#" style="color: #1a0dab; text-decoration: none;">
-                        Условия использования
-                    </a>
-                </div>
-            </div>
+            <!-- Убираем reCAPTCHA из формы, так как Formspree может не требовать его -->
+            <button id="send" class="btn_send button_select" type="submit">СВЯЖИТЕСЬ С НАМИ</button>
             
-            <!-- Иконка reCAPTCHA справа -->
-            <div style="display: flex; align-items: center;">
-                <div style="position: relative;">
-                    <!-- Фоновый цветной блок -->
-                    <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #4285f4 0%, #34a853 25%, #fbbc05 50%, #ea4335 75%); 
-                            border-radius: 4px; position: absolute;"></div>
-                    
-                    <!-- Белая буква R в квадрате -->
-                    <div style="width: 30px; height: 30px; background: #fff; border-radius: 2px; 
-                            position: relative; top: 3px; left: 3px; display: flex; align-items: center; 
-                            justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
-                        <div style="font-size: 18px; font-weight: bold; color: #666; font-family: Arial, sans-serif;">R</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <!-- Сообщение о статусе отправки -->
+            <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
         </form>
+    </div>
     </div>
         <!-- 13. FOOTER  -->
         <div class="razdel"></div>
