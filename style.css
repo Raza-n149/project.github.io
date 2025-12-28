@@ -1460,3 +1460,63 @@ form button{
         width: 585px;
     }
 }
+
+/* Стили для блока "Я не робот" */
+.captcha-container {
+    transition: all 0.3s ease;
+}
+
+.captcha-container:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}
+
+#captcha-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #5f6368;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+#captcha-checkbox:checked {
+    background-color: #4285f4;
+    border-color: #4285f4;
+}
+
+#captcha-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.captcha-container a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .captcha-container {
+        padding: 10px;
+    }
+    
+    .captcha-container > div {
+        flex-wrap: wrap;
+    }
+    
+    .captcha-container svg {
+        width: 30px;
+        height: 30px;
+    }
+}
