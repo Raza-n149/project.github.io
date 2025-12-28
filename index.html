@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.min.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="slick.min.js"></script>
+    <title>Проект WEB</title>
+</head>
+<body>
+    <title>Проект WEB</title>
+    <style>
+        /* Дополнительные стили для решения проблемы с кликабельностью */
+        header#head {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header#head video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .header_back_img {
+            position: absolute;
+            z-index: 2;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Убедимся, что все интерактивные элементы кликабельны */
+        .header_tarif_button,
+        .tarif_button,
+        .team_button,
+        button,
+        a,
+        input,
+        textarea,
+        .menu li,
+        .socials a {
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+        }
+        
+        /* Улучшение видимости меню */
+        .menus {
+            position: relative;
+            z-index: 100;
+        }
+        
+        /* Для формы */
+        #form_send {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Скрыть якоря при плавном скролле */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1 -->
+
+    <header id="head">
+        <video autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <img src="druplicon.svg" class="header_back_img" alt="">
+        <div class="container">
+
+            <div class="menus">
+                <div class="mobile_head_menu">
+                    <div class="container">
+                        <a href="/project" class="logo_a"><img src="logoText.svg" class="logo" alt=""></a>
+                        <div class="burger_menu">
+                            <div class="burger_menu_1"></div>
+                        </div>
+                    </div>
+                </div>
+        
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#services">ПОДДЕРЖКА DRUPAL</a></li>
+                        <li class="menu_podcat">
+                            <span><a href="#supports">АДМИНИСТРИРОВАНИЕ</a></span>
+                            <ul>
+                                <li><a href="#tasks">МИГРАЦИЯ</a></li>
+                                <li><a href="#form">БЭКАПЫ</a></li>
+                                <li><a href="#FAQ">АУДИТ БЕЗОПАСНОСТИ</a></li>
+                                <li><a href="#tasks">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li>
+                                <li><a href="#form">ПЕРЕЕЗД НА HTTPS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#team">ПРОДВИЖЕНИЕ</a></li>
+                        <li><a href="#cases">РЕКЛАМА</a></li>
+                        <li class="menu_podcat">
+                            <span><a href="#about">О НАС</a></span>
+                            <ul>
+                                <li><a href="#team">КОМАНДА</a></li>
+                                <li><a href="#reviews">DRUPALGIVE</a></li>
+                                <li><a href="#cases">БЛОГ</a></li>
+                                <li><a href="#form">КУРСЫ DRUPAL</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#cases">ПРОЕКТЫ</a></li>
+                        <li><a href="#form">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="head_f">
+                <div>
+                    <h1>Поддержка<br> сайтов на Drupal</h1>
+                    <h2>Сопровождение и поддержка сайтов<br>на CMS Drupal любых версий и запущенности</h2>
+                    <a href="#tarif" class="header_tarif_button">ТАРИФЫ</a>
+                </div>
+                <div class="header_categories">
+                    <div>
+                        <div class="zag header_zag_big">#1</div>
+                        <div class="podzag">Drupal-разработчик в России по версии Рейтинга Рунета</div>
+                    </div>
+                    <div>
+                        <div class="zag">3+</div>
+                        <div class="podzag">средний опыт специалистов более 3 лет</div>
+                    </div>
+                    <div>
+                        <div class="zag">14</div>
+                        <div class="podzag">лет опыта в сфере Drupal</div>
+                    </div>
+                    <div>
+                        <div class="zag">50+</div>
+                        <div class="podzag">модулей и тем в формате DrupalGive</div>
+                    </div>
+                    <div>
+                        <div class="zag">90 000</div>
+                        <div class="podzag">часов поддержки сайтов на Drupal</div>
+                    </div>
+                    <div>
+                        <div class="zag">300+</div>
+                        <div class="podzag">Проектов на поддержке</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- 2 -->
+
+        <section id="services">
+            <div class="container">
+                <h1>13 лет совершенствуем<br>компетенции в Друпал<br>поддержке!</h1>
+                <div class="podzag1">Разрабатываем и оптимизируем модули, расширяем<br>функциональность сайтов, обновляем дизайн</div>
+
+                <div class="services_parts">
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services1.svg" alt="">
+                            </div>
+                            <div class="podzag1">Добавление<br>информации на сайт,<br>создание новых<br>разделов</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services2.svg" alt="">
+                            </div>
+                            <div class="podzag1">Разработка и<br> оптимизация модулей<br> сайта</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services3.svg" alt="">
+                            </div>
+                            <div class="podzag1">Интеграция с CRM, 1C,<br>платежными системами,<br>любыми веб-сервисами</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services4.svg" alt="">
+                            </div>
+                            <div class="podzag1">Любые доработки<br> функционала и дизайна</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services5.svg" alt="">
+                            </div>
+                            <div class="podzag1">Аудит и мониторинг<br>безопасности Drupal<br>сайтов</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services6.svg" alt="">
+                            </div>
+                            <div class="podzag1">Миграция, импорт<br>контента и апгрейд<br>Drupal</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services7.svg" alt="">
+                            </div>
+                            <div class="podzag1">Оптимизация<br>и ускорение Drupal-сайтов</div>
+                        </div>
+                    </div>
+                    <div class="services_part">
+                        <div class="services_part_sor">
+                            <div class="services_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="services8.svg" alt="">
+</div>
+                            <div class="podzag1">Веб-маркетинг,<br>консультации и работы<br> по SEO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 -->
+
+        <section id="supports">
+            <div class="container">
+                <h1>Поддержка<br>от Drupal-coder</h1>
+                <div class="supports_list">
+                    <div>
+                        <div class="support_num">01.</div>
+                        <div class="zag">Постановка задачи по Email</div>
+                        <div class="podzag">Удобная и привычная модель постановки задач, при которой задачи фиксируются и никогда не теряются.</div>
+                        <img src="support1.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">02.</div>
+                        <div class="zag">Система Helpdesk – отчетность, прозрачность</div>
+                        <div class="podzag">Возможность посмотреть все заявки в работе и отработанные часы в личном кабинете через браузер.</div>
+                        <img src="support2.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">03.</div>
+                        <div class="zag">Расширенная техническая поддержка</div>
+                        <div class="podzag">Возможность организации расширенной техподдержки с 6:00 до 22:00 без выходных.</div>
+                        <img src="support3.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">04.</div>
+                        <div class="zag">Персональный менеджер проекта</div>
+                        <div class="podzag">Ваш менеджер проекта  всегда в курсе текущего состояния проекта и в любой момент готов ответить на любые вопросы.</div>
+                        <img src="support4.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">05.</div>
+                        <div class="zag">Удобные способы оплаты</div>
+                        <div class="podzag">Безналичный расчет по договору или электронные деньги: WebMoney, Яндекс.Деньги, Paypal.</div>
+                        <img src="support5.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">06.</div>
+                        <div class="zag">Работаем с SLA и NDA</div>
+                        <div class="podzag">Работа в рамках соглашений о конфиденциальности и об уровне качетсва работ.</div>
+                        <img src="support6.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">07.</div>
+                        <div class="zag">Штатные специалисты</div>
+                        <div class="podzag">Надежные штатные специалисты, никаких фрилансеров.</div>
+                        <img src="support7.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="support_num">08.</div>
+                        <div class="zag">Удобные каналы связи</div>
+                        <div class="podzag">Консультации по телефону, скайпу, в месенджерах.</div>
+                        <img src="support8.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 -->
+        <section id="expertise">
+            <div class="container">
+                <h1>Экспертиза в Drupal,<br> опыт 14 лет!</h1>
+ 
+                <div class="header_categories">
+                    <div>
+                        <div class="podzag">Только системный подход –<br> контроль версий,<br> резервирование и<br> тестирование!</div>
+                    </div>
+                    <div>
+                        <div class="podzag">Только Drupal сайты, не<br> берем на поддержку сайты<br> на других CMS!</div>
+                    </div>
+                    <div>
+                        <div class="podzag">Учавствуем в разработке<br> ядра Drupal и модулей на<br> Drupal.org, разрабатываем<br> <a href="">свои модули Drupal</a></div>
+                    </div>
+                    <div>
+                        <div class="podzag">Поддерживаем сайты на<br> Drupal 5, 6, 7 и 8</div>
+                    </div>
+                </div>
+            </div>
+            <img src="druplicon1.svg" class="expertise_back_img" alt="">
+            <img src="laptop.png" class="expertise_laptop" alt="">
+        </section>
+        <!-- 5 -->
+          <div class="container">
+    <h1>Тарифы</h1>
+    
+    <div class="tarif_categories">
+        <div class="tarif_category">
+            <div class="tarif_title">Стартовый</div>
+            <div class="tarif_price">2000<div>₽</div></div>
+            <div class="tarif_podprise">в час</div>
+            <hr>
+            <div class="tarif_items">
+                <div class="tarif_item">Консультации и работы по SEO</div>
+                <div class="tarif_item">Услуги дизайнера</div>
+                <div class="tarif_item">Неиспользованные оплаченные часы переносятся на следующий месяц</div>
+                <div class="tarif_item">Предоплата от 6 000 рублей в месяц</div>
+            </div>
+            <a href="#form" class="tarif_button">СВЯЖИТЕСЬ С НАМИ!</a>
+        </div>
+
+        <div class="tarif_category active">
+            <div class="tarif_title">Бизнес</div>
+            <div class="tarif_price">2000<div>₽</div></div>
+            <div class="tarif_podprise">в час</div>
+            <hr>
+            <div class="tarif_items">
+                <div class="tarif_item">Консультации и работы по SEO</div>
+                <div class="tarif_item">Услуги дизайнера</div>
+                <div class="tarif_item">Высокое время реакции – до 2 рабочих дней</div>
+                <div class="tarif_item">Неиспользованные оплаченные часы не переносятся</div>
+                <div class="tarif_item">Предоплата от 30 000 рублей в месяц</div>
+            </div>
+            <a href="#form" class="tarif_button button_select">СВЯЖИТЕСЬ С НАМИ!</a>
+        </div>
+
+        <div class="tarif_category">
+            <div class="tarif_title">VIP</div>
+            <div class="tarif_price">1800<div>₽</div></div>
+            <div class="tarif_podprise">в час</div>
+            <hr>
+            <div class="tarif_items">
+                <div class="tarif_item">Консультации и работы по SEO</div>
+                <div class="tarif_item">Услуги дизайнера</div>
+                <div class="tarif_item">Максимальное время реакции – в день обращения</div>
+                <div class="tarif_item">Неиспользованные оплаченные часы не переносятся</div>
+                <div class="tarif_item">Предоплата от 270 000 рублей в месяц</div>
+            </div>
+            <a href="#form" class="tarif_button">СВЯЖИТЕСЬ С НАМИ!</a>
+        </div>
+    </div>
+
+    <div class="tarif_info subtitle">Вам не подходят наши тарифы? Оставьте заявку и мы<br> предложим вам индивидуальные условия!</div>
+    <div class="tarif_individual">
+        <a href="#form" class="podzag">Получить индивидуальный тариф</a>
+    </div>
+</div>
+        <!-- 6 -->
+
+                <section id="tasks">
+            <div class="container">
+                <h1>Наши профессиональные разработчики выполняют быстро любые задачи</h1>
+                <div class="tasks_parts">
+                    <div class="tasks_part">
+                        <div class="tasks_part_sor">
+                            <div class="tasks_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="tasks1.svg" alt="">
+                            </div>
+                            <h1>от 1ч</h1>
+                            <div class="podzag1">Настройка события GA в<br>интернет-магазине</div>
+                        </div>
+                    </div>
+                    <div class="tasks_part">
+                        <div class="tasks_part_sor">
+                            <div class="tasks_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="tasks2.svg" alt="">
+                            </div>
+                            <h1>от 20ч</h1>
+                            <div class="podzag1">Разработка мобильной<br>версии сайта</div>
+                        </div>
+                    </div>
+                    <div class="tasks_part">
+                        <div class="tasks_part_sor">
+                            <div class="tasks_imgs">
+                                <img src="servicesback.svg" alt="">
+                                <img src="tasks3.svg" alt="">
+                            </div>
+                            <h1>от 8ч</h1>
+                            <div class="podzag1">Интеграция модуля<br>оплаты</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 7 -->
+
+        <section id="team">
+            <div class="container">
+                <h1>Команда</h1>
+                <div id="teammates">
+                    <div class="teammate">
+                        <div class="teammate2">
+                            <img src="team1.jpg" alt="">
+                            <div class="name">Сергей Синица</div>
+                            <div class="podzag">Руководитель отдела веб-разработки, канд. техн. наук, заместитель директора</div>
+                        </div>
+                    </div>
+                    <div class="teammate">
+                        <div class="teammate2">
+                            <img src="team2.jpg" alt="">
+                            <div class="name">Роман Агабеков</div>
+                            <div class="podzag">Руководитель отдела DevOPS, директор</div>
+                        </div>
+                    </div>
+                    <div class="teammate">
+                        <div class="teammate2">
+                            <img src="team3.jpg" alt="">
+                            <div class="name">Сергей Синица</div>
+                            <div class="podzag">Руководитель отдела поддержки сайтов</div>
+                        </div>
+                    </div>
+                    <div class="teammate">
+                        <div class="teammate2">
+                            <img src="team4.jpg" alt="">
+                            <div class="name">Дарья Бочкарёва</div>
+                            <div class="podzag">Руководитель отдела продвижения, контекстной рекламы и контент-поддержки сайтов</div>
+                        </div>
+                    </div>
+                    <div class="teammate">
+                        <div class="teammate2">
+                            <img src="team5.jpg" alt="">
+                            <div class="name">Ирина Торкунова</div>
+                            <div class="podzag">Менеджер по работе с клиентами</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#team" class="team_button">Вся команда</a>
+            </div>
+        </section>
+
+        <!-- 8 -->
+
+        <section id="cases">
+            <div class="container">
+                <div class="m-5">
+                <h1 class="text-flex text-center pb-4">Последние кейсы</h1>
+                <div class="fleximg">
+                    <ul>
+                    <li>
+                        <img src="image 9.2.png" alt="1" loading="lazy" />
+                        <h4>
+                        Настройка выгрузкии YML для <br />
+                        Яндекс. Маркета
+                        </h4>
+                        <p>
+                        22.04.2019<br />
+                        Эти слова совершенно справедливы, <br />однако гипнотический
+                        рифф продолжает <br />паузный пласт
+                        </p>
+                    </li>
+                    <li class="case_d2">
+                        <div id="tekst_sverhu_kartinki">
+                        <img src="image 11.1.png" alt="2" loading="lazy" />
+                        <div class="tekst_sverhu_kartinki_1">
+                            <h4>
+                            Настройка выгрузкии YML для <br />
+                            Яндекс. Маркета
+                            </h4>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="tekst_sverhu_kartinki">
+                        <img src="image 8.3.png" alt="3" loading="lazy" />
+                        <div class="tekst_sverhu_kartinki_1">
+                            <h4>
+                            Настройка выгрузкии YML для <br />
+                            Яндекс. Маркета
+                            </h4>
+                            <span>22.04.2019</span>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="tekst_sverhu_kartinki">
+                        <img src="image 7.3.png" alt="4" loading="lazy" />
+                        <div class="tekst_sverhu_kartinki_1">
+                            <h4>
+                            Настройка выгрузкии YML для <br />
+                            Яндекс. Маркета
+                            </h4>
+
+                            <span>22.04.2019</span>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="image 6.2.png" alt="5" loading="lazy" />
+                        <h4>
+                        Настройка выгрузкии YML для <br />
+                        Яндекс. Маркета
+                        </h4>
+                        <p>
+                        22.04.2019<br />
+                        Эти слова совершенно справедливы, <br />однако гипнотический
+                        рифф продолжает <br />паузный пласт
+                        </p>
+                    </li>
+
+                    <li class="case_d2">
+                        <div id="tekst_sverhu_kartinki">
+                        <img src="image 10.1.png" alt="6" loading="lazy" />
+                        <div class="tekst_sverhu_kartinki_1">
+                            <h4>
+                            Настройка выгрузкии YML для <br />
+                            Яндекс. Маркета
+                            </h4>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="tekst_sverhu_kartinki">
+                        <img src="image 6.3.png" alt="7" loading="lazy" />
+                        <div class="tekst_sverhu_kartinki_1">
+                            <h4>
+                            Настройка выгрузкии YML для <br />
+                            Яндекс. Маркета
+                            </h4>
+                            <span>22.04.2019</span>
+                        </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+<!-- 9. reviews -->
+<section id="reviews">              
+    <div class="container">
+        <h1>Отзывы</h1>
+        <div class="txts">
+            <div class="review_bg"></div>
+            <div class="review-container">
+                <div class="review-slider">
+                    <!-- Отзыв 1 -->
+                    <div class="review-item active">
+                        <div class="review-header">
+                            <img src="review2.png" alt="Отзыв Натальи Сушковой" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">CIEL</div>
+                                <div class="review-website">p a r f u m</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Долгие поиски единственного и неповторимого мастера на многострадальный сайт www.cielparfum.com, который был собран крайне некомпетентным программистом и раз в месяц стабильно грозил погибнуть, привели меня на сайт и, в итоге, к ребятам из Drupal-coder. И вот уже практически полгода как не проходит и дня, чтобы я не поудивлялась и не порадовалась своему везению! Починили все, что не работало - от поиска до отображения меню. Провели редизайн - не отходя от желаемого, но со своими существенными и качественными дополнениями. Осуществили ряд проектов - конкурсы, тесты и тд. А уж мелких починок и доработок - не счесть! И главное - все качественно и быстро (не взирая на не самый "быстрый" тариф). Есть вопросы - замечательный Алексей всегда подскажет, поддержит, отремонтирует и/или просто сделает с нуля. Есть задумка для реализации - замечательный Сергей обсудит и предложит идеальный вариант. Есть проблема - замечательные Надежда и Роман починят, поправят, сделают! Ребята доказали, что эта CMS - мощная и грамотная система управления. Надеюсь, что наше сотрудничество затянется надолго! Спасибо!!!</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>С уважением, Наталья Сушкова руководитель Отдела веб-проектов Группы компаний «Си Эль парфюм»<br>
+                            <a href="http://www.cielparfum.com/">www.cielparfum.com</a></strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 2 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review1.png" alt="Отзыв Сергея Чепурко" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">PERSONAL-WRITER</div>
+                                <div class="review-website">writers-united.org</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Сергей — профессиональный, высококвалифицированый программист с огромным опытом в ИТ. Я долгое время общался с топ-фрилансерами (вся первая двадцатка) на веблансере и могу сказать, что С СЕРГЕЕМ ОНИ И РЯДОМ НЕ ВАЛЯЛИСЬ. Работаем с Сергеем до сих пор. С ним приятно работать, я доволен.</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Сергей Чепурко, руководитель проекта<br>
+                            <a href="http://www.personal-writer.com/">www.personal-writer.com</a></strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 3 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review3.jpg" alt="Отзыв Леонида Ледовского" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">INITLAB</div>
+                                <div class="review-website">отзыв клиента</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Выражаю глубочайшую благодарность команде специалистов компании "Инитлаб" и лично Дмитрию Купянскому и Алексею Синице. Сайт был первоклассно перевёрстан из старой табличной модели в новую на базе Drupal с дополнительной функциональностью. Всё было сделано с высочайшим качеством и точно в сроки. Всем кому хочется без нервов и лишних вопросов разработать сайт рекомендую обращаться именно к этой команде профессионалов.</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Леонид Александрович Ледовский</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 4 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review4.png" alt="Отзыв Надежды Сикорской" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">NASHAGAZETA</div>
+                                <div class="review-website">nashagazeta.ch</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Моя электронная газета www.nashagazeta.ch существует в Швейцарии уже 10 лет. За это время мы сменили 7 специалистов по техподдержке, и только сейчас, в последние несколько месяцев, с начала сотрудничества с Алексеем Синицей и его командой, я впервые почувствовала, что у меня есть надежный технический тыл. Без громких слов и обещаний, ребята просто спокойно и качественно делают работу, быстро реагируют, находят решения, предлагают конкретные варианты улучшения функционирования сайта и сами их оперативно осуществляют. Сотрудничество с ними – одно удовольствие!</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Надежда Сикорская, Женева, Швейцария</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 5 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review5.png" alt="Отзыв Кузина Вадима" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">ESTEE DESIGN</div>
+                                <div class="review-website">estee-design.ru</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Наша компания Estee Design занимается дизайном интерьеров. Сайт сверстан на Drupal. Искали программистов под выполнение ряда небольших изменений и корректировок по сайту. Пообщавшись с Алексеем Синицей, приняли решение о начале работ с компанией Initlab/drupal-coder. Сотрудничеством довольны на 100%. Четкая и понятная система коммуникации, достаточно оперативное решение по задачам. Дали рекомендации по улучшению програмной части сайта, исправили ряд скрытых ошибок. Никогда не пишу отзывы (нет времени), но в данном случае, по просьбе Алексея, не могу не рекомендовать Initlab другим людям - действительно компания профессионалов.</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Кузин Вадим, руководитель строительного направления Дизайн-бюро интерьеров Estee<br>
+                            <a href="http://estee-design.ru">estee-design.ru</a></strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 6 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review6.png" alt="Отзыв Константина Бельского" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">CABLEMAN</div>
+                                <div class="review-website">cableman.ru</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Наша компания за несколько лет сменила несколько команд программистов и специалистов техподдержки, и почти отчаялась найти на российском рынке адекватное профессиональное предложение по разумной цене. Пока мы не начали работать с командой "Инитлаб", воплощающей в себе все наши представления о нормальной системе взаимодействия в сочетании с профессиональным неравнодушием. Впервые в моей деловой практике я чувствую надежно прикрытыми важнейшие задачи в жизни электронного СМИ, при том, что мои коллеги работают за сотни километров от нас и мы никогда не встречались лично.</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Константин Бельский, зам. генерального директора портала<br>
+                            <a href="http://www.cableman.ru/">www.cableman.ru</a></strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 7 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review7.png" alt="Отзыв Владислава" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">SEREBRO</div>
+                                <div class="review-website">serebro.ag</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>За довольно продолжительный срок (2014 - 2016 годы) весьма плотной работы (интернет-магазин на безумно замороченном Drupal 6: устраняли косяки разработчиков, ускоряли сайт, сделали множество новых функций и т.п.) - только самые добрые эмоции от работы с командой Initlab / Drupal-coder: всегда можно рассчитывать на быструю и толковую помощь, поддержку, совет. Даже сейчас, не смотря на то, что мы почти год не работали на постоянной основе (банально закончились задачи), случайно возникшая проблема с сайтом была решена мгновенно! В общем, только самые искренние благодарности и рекомендации! Спасибо!</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>С уважением, Владислав<br>
+                            <a href="http://serebro.ag">serebro.ag</a></strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Отзыв 8 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="review8.jpg" alt="Отзыв Дмитрия Новикова" class="review-logo" />
+                            <div class="review-title">
+                                <div class="review-company">LPCMA</div>
+                                <div class="review-website">lpcma.tsu.ru</div>
+                            </div>
+                        </div>
+                        <div class="slidertext_text">
+                            <strong>Хотел поблагодарить за работу над нашими сайтами. За 4 месяца работы привели сайт в порядок, а самое главное получили инструмент, с помощью мы теперь можем быстро и красиво выставлять контент для образования и работы с предприятиями http://lpcma.tsu.ru/ru/post/reference_material</strong>
+                        </div>
+                        <div class="slidertext_names">
+                            <strong>Дмитрий Новиков<br>
+                            <a href="http://lpcma.tsu.ru">lpcma.tsu.ru</a></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-navigation">
+                <button class="review-prev">
+                    <img src="arrow-left.svg" alt="Предыдущий отзыв" class="arrow-icon" />
+                </button>
+                <div class="review-counter">
+                    <span class="current-review">01</span>
+                    <span class="separator">/</span>
+                    <span class="total-reviews">08</span>
+                </div>
+                <button class="review-next">
+                    <img src="arrow-right.svg" alt="Следующий отзыв" class="arrow-icon" />
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Стили для отзывов как на изображении */
+#reviews {
+    position: relative;
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.review-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    min-height: 500px;
+}
+
+.review-slider {
+    position: relative;
+}
+
+.review-item {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.review-item.active {
+    display: block;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.review-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+    /* Убираем круглую рамку */
+    border: none;
+    border-radius: 0;
+}
+
+.review-title {
+    flex-grow: 1;
+}
+
+.review-company {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.review-website {
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.slidertext_text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.slidertext_text strong {
+    font-weight: 700;
+}
+
+.slidertext_names {
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.slidertext_names strong {
+    font-weight: 700;
+}
+
+.slidertext_names a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.slidertext_names a:hover {
+    text-decoration: underline;
+}
+
+.review-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.review-prev, .review-next {
+    background: transparent;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.review-prev:hover, .review-next:hover {
+    opacity: 0.7;
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 40px;
+    /* Черные стрелки */
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.review-counter {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.current-review {
+    color: #ff0000; /* Красный цвет для текущего номера */
+    font-weight: bold;
+}
+
+.separator {
+    margin: 0 5px;
+    color: #333;
+}
+
+.total-reviews {
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+<script>
+// JavaScript для переключения отзывов
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewItems = document.querySelectorAll('.review-item');
+    const prevButton = document.querySelector('.review-prev');
+    const nextButton = document.querySelector('.review-next');
+    const currentReviewSpan = document.querySelector('.current-review');
+    const totalReviewsSpan = document.querySelector('.total-reviews');
+    
+    let currentIndex = 0;
+    const totalReviews = reviewItems.length;
+    
+    // Установить общее количество отзывов
+    totalReviewsSpan.textContent = totalReviews.toString().padStart(2, '0');
+    
+    // Функция для показа отзыва по индексу
+    function showReview(index) {
+        // Скрыть все отзывы
+        reviewItems.forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Показать выбранный отзыв
+        reviewItems[index].classList.add('active');
+        
+        // Обновить счетчик
+        currentReviewSpan.textContent = (index + 1).toString().padStart(2, '0');
+        currentIndex = index;
+    }
+    
+    // Показать первый отзыв при загрузке
+    showReview(0);
+    
+    // Обработчик для кнопки "следующий"
+    nextButton.addEventListener('click', function() {
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= totalReviews) {
+            nextIndex = 0; // Вернуться к первому отзыву
+        }
+        showReview(nextIndex);
+    });
+    
+    // Обработчик для кнопки "предыдущий"
+    prevButton.addEventListener('click', function() {
+        let prevIndex = currentIndex - 1;
+        if (prevIndex < 0) {
+            prevIndex = totalReviews - 1; // Перейти к последнему отзыву
+        }
+        showReview(prevIndex);
+    });
+});
+</script>
+        <!-- 10. partners -->
+<section id="partners">
+    <div class="container">
+        <h1>С нами работают</h1>
+        <h2>Десятки компаний доверяют нам самое ценное, что у них есть в интернете – свои сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.</h2>
+        
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-logo-container">
+                    <img src="partner1.svg" alt="" class="partner-logo">
+                </div>
+            </div>
+            
+            <div class="partner-card">
+                <div class="partner-logo-container">
+                    <img src="partner2.svg" alt="" class="partner-logo">
+                </div>
+            </div>
+            
+            <div class="partner-card">
+                <div class="partner-logo-container">
+                    <img src="partner3.svg" alt="" class="partner-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+#partners {
+    padding: 60px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+#partners h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#partners h2 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: normal;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-card {
+    flex: 0 0 auto;
+    padding: 20px 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.partner-logo-container {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.partner-logo {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .partner-logo-container {
+        width: 140px;
+        height: 140px;
+        padding: 15px;
+    }
+    
+    .partners-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .partner-card {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-logo-container {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+    }
+    
+    .partner-card {
+        width: 90%;
+    }
+}
+</style>
+        
+        
+     
+        
+        
+     
+
+        <!-- 11. FAQ -->
+
+        <section id="FAQ">
+            <div class="container">
+                <h1>FAQ</h1>
+                <div id="AskList">
+                    <div id="FAQ1li" class="active">
+                        <div class="faq_zag">Кто непосредственно занимается поддержкой?</div>
+                        <div class="text">Сайты поддерживают штатные сотрудники ООО «Инитлаб», г. Краснодар, прошедшие специальное обучение и имеющие опыт работы с Друпал от 4 до 15 лет: 8 web разработчиков, 2 специалиста по SEO, 4 системных администратора.</div>
+                    </div>
+                    <div id="FAQ2li">
+                        <div class="faq_zag">Как организована работа поддержки?</div>
+                        <div class="text">Клиент выбирает один из тарифов и делает предоплату. Все заявки на работы по сайту заводятся в нашу систему Service desk. В течение времени реакции по тарифу закрепленный за проектом специалист приступает к выполнению заявки, фиксирует время, потраченное на выполнение заявки и закрывает заявку по окончанию работы. Клиент может посмотреть все заявки в работе и отработанные часы в своем кабинете через веб-интерфейс.</div>
+                    </div>
+                    <div id="FAQ3li">
+                        <div class="faq_zag">Что происходит, когда отработаны все предоплаченные часы за месяц?</div>
+                        <div class="text">Мы уведомляем Клиента, о том, что последующие заявки в этом месяце будут выполняться с доплатой согласно тарифу либо будут перенесены по срокам на следующий месяц. В конце месяца, в котором были заявки с доплатой, клиентам отправляется счет на доплату по факту выполненных работ сверх предоплаты тарифного плана.</div>
+                    </div>
+                    <div id="FAQ4li">
+                        <div class="faq_zag">Что происходит, когда не отработаны все предоплаченные часы за месяц?</div>
+                        <div class="text">Предоплата не переносится на следующий месяц и деньги не возвращаются. Для продолжения поддержки сайта необходимо оплатить предоплату согласно выбранному тарифу за следующий месяц.</div>
+                    </div>
+                    <div id="FAQ5li">
+                        <div class="faq_zag">Как происходит оценка и согласование планируемого времени на выполнение заявок?</div>
+                        <div class="text">Заявки, выполнение которых укладывается в оставшееся предоплаченное время, по умолчанию не оцениваются и время не согласовывается, мы стараемся сэкономить время и быстро выполнить работу. Если видим, что задача не укладывается в предоплаченное время, то делаем примерную оценку по времени и согласовываем оценку трудоемкости с Клиентом. Клиент может явно попросить предварительно оценить работу по времени и согласовать трудоемкость, направив заявку с припиской в теме письма «Оценить работу». В этом случае время на оценку также оплачивается согласно тарифу поддержки. Если время фактического выполнения превышает заранее согласованное, то уточняем оценку, договариваемся о возможной доплате и переносе сроков по задаче. На наше усмотрение большие задачи, трудоемкость которых мы можем заранее оценить, например, разработка отдельных модулей или самостоятельных разделов сайта по подробному техническому заданию, могут быть вынесены из поддержки в отдельный проект на договорных условиях.</div>
+                    </div>
+                    <div id="FAQ6li">
+                        <div class="faq_zag">Сколько программистов выделяется на проект?</div>
+                        <div class="text">1-2 человека. За каждым проектом закрепляется один ответственный специалист, через которого проходят все заявки. Все заявки становятся в очередь к ответственному в порядке их поступления в Helpdesk. Возможно привлечение дополнительных штатных специалистов в поддержку проекта в случаях, когда:
+                            • объем заявок стабильно большой и ответственный не успевает выполнять задачи;
+                            • ответственный не может начать работу по заявке в срок (заболел, ушел в отпуск);
+                            • специфика задачи такова, что кто-то в команде сделает эту работу существенно быстрее.</div>
+                    </div>
+                    <div id="FAQ7li">
+                        <div class="faq_zag">Как подать заявку на внесение изменений на сайте?</div>
+                        <div class="text">Для подачи заявки на внесение изменений на сайте необходимо написать письмо на email поддержки с указанием в теме письма домена сайта и подробным описанием вносимых изменений.</div>
+                    </div>
+                    <div id="FAQ8li">
+                        <div class="faq_zag">Как подать заявку на добавление пользователя, изменение настроек веб-сервера и других задач по администрированию?</div>
+                        <div class="text">Для любых задач по администрированию необходимо написать письмо на email поддержки с указанием домена сайта и описанием задачи.</div>
+                    </div>
+                    <div id="FAQ9li">
+                        <div class="faq_zag">В течение какого времени начинается работа по заявке?</div>
+                        <div class="text">Время реакции зависит типа заявки и от выбранного тарифного плана. Время реакции на сбои, обнаруживаемые системой мониторинга, от 2-х часов в рабочее время. Время реакции на заявки по доработке сайта от 24-х часов в рабочее время. Время реакции может быть более гибко определено в SLA.</div>
+                    </div>
+                    <div id="FAQ10li">
+                        <div class="faq_zag">В какое время работает поддержка?</div>
+                        <div class="text">Время работы поддержки с 10 до 18 часов (MSK, GMT+3) в рабочие дни. Мы также можем выполнять работы сверхурочно по договоренности с оплатой по двойной ставке часа.</div>
+                    </div>
+                    <div id="FAQ11li">
+                        <div class="faq_zag">Подходят ли услуги поддержки, если необходимо произвести обновление ядра Drupal или модулей?</div>
+                        <div class="text">Обновление безопасности в рамках одной ветки Drupal делается в режиме поддержки на всех тарифных планах. Обновление, связанное с переходом на следующую ветку Drupal, например апгрейд с 6.х на 7.х, лучше делать в рамках отдельного проекта, стоимость и сроки которого мы можем предложить после проведения аудита апгрейда. Аудит апгрейда включает в себя анализ путей миграции и трудоемкости обновления для всех модулей, блоков кода, Views, тем оформления, стоит от 6500 рублей и, как правило, занимает 1-3 дня, в зависимости от размера сайта.</div>
+                    </div>
+                    <div id="FAQ12li">
+                        <div class="faq_zag">Можно ли пообщаться со специалистом голосом или в мессенджере?</div>
+                        <div class="text">Для этого нужно написать заявку на консультацию на email поддержки и сообщить удобное время и контактные данные.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- 12. FORM -->
+    <footer id="form">
+        <div class="container">
+            <div class="form_contacts">
+                <h1>Оставить заявку на<br> поддержку сайта</h1>
+                <h2>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или предыдущий подрядчик не справился с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</h2>
+
+                <div class="form_contact">
+                    <div class="form_phone"><a href="tel:+78002222673">8 800 222-26-73</a></div>
+                    <div class="form_mail"><a href="mailto:info@drupal-coder.ru">info@drupal-coder.ru</a></div>
+                </div>
+            </div>
+
+            <form action="" id="form_send">
+                <h4 id="status"></h4>
+                <div>
+                    <input type="text" name="name" id="name" class="form_input" placeholder="Ваше имя">
+                </div>
+                <div>
+                    <input type="tel" name="phone" id="phone" class="form_input" placeholder="Телефон">
+                </div>
+                <div>
+                    <input type="email" name="email" id="email" class="form_input" placeholder="E-mail">
+                </div>
+                <div>
+                    <textarea name="message" id="message" class="form_input" placeholder="Ваш комментарий"></textarea>
+                </div>
+                <div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="oznakomlen" id="oznakomlen">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Отправляя заявку, я даю согласие на <a href="">обработку своих персональных данных</a></span>
+                    </label>
+                </div>
+                <div data-theme="dark" class="g-recaptcha" data-sitekey="6LeLxjIpAAAAAMWW79_2pMO4P4o9W6NKWZZHo_sz"></div>
+                <button id="send" class="btn_send button_select" type="submit">СВЯЖИТЕСЬ С НАМИ</button>
+            </form>
+        </div>
+
+        <!-- 13. FOOTER  -->
+        <div class="razdel"></div>
+        <div class="container">
+            <div class="socials">
+                <a class="social">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a class="social">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a class="social">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social">
+                    <div class="social_fb">ФБ</div>
+                </a>
+            </div>
+            <div class="footer_end">
+                ООО «Инитлаб», Краснодар, Россия.<br>
+                Drupal является зарегистрированной торговой маркой Dries Buytaert.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для всех ссылок с якорями
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка всех ссылок с хешем
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Плавная прокрутка
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Отступ сверху для фиксированного меню
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Обработка кнопок с onclick атрибутами
+            document.querySelectorAll('button[onclick^="location.href"]').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const onclickValue = this.getAttribute('onclick');
+                    const match = onclickValue.match(/location\.href=['"](#[^'"]+)['"]/);
+                    
+                    if (match) {
+                        e.preventDefault();
+                        const targetId = match[1];
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script>
+// Обработка чекбокса и формы
+document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('oznakomlen');
+    const submitBtn = document.getElementById('send');
+    const form = document.getElementById('form_send');
+    
+    // Функция обновления состояния кнопки
+    function updateSubmitButton() {
+        if (checkbox.checked) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.5';
+            submitBtn.style.cursor = 'not-allowed';
+        }
+    }
+    
+    // Инициализация при загрузке
+    updateSubmitButton();
+    
+    // Обновление при изменении чекбокса
+    checkbox.addEventListener('change', updateSubmitButton);
+    
+    // Проверка перед отправкой формы
+    form.addEventListener('submit', function(e) {
+        // Проверка чекбокса
+        if (!checkbox.checked) {
+            e.preventDefault();
+            alert('Пожалуйста, отметьте согласие на обработку персональных данных');
+            return false;
+        }
+        
+        // Проверка reCAPTCHA
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>);
+});
+</script>
+
+    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим все элементы FAQ
+    const faqItems = document.querySelectorAll('#AskList > div');
+    
+    faqItems.forEach(item => {
+        // Находим заголовок вопроса
+        const question = item.querySelector('.faq_zag');
+        
+        // Добавляем курсор указателя
+        question.style.cursor = 'pointer';
+        
+        // Добавляем обработчик клика
+        question.addEventListener('click', function() {
+            // Закрываем все открытые вопросы
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Переключаем состояние текущего вопроса
+            item.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+<style>
+/* Стили для чекбокса */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.checkbox-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.checkbox-text a:hover {
+    text-decoration: underline;
+}
+</style>
+</body>
+</html>

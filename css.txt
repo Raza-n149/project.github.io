@@ -1,0 +1,47 @@
+/* Стили для отладки */
+.image-error {
+    border: 2px solid red !important;
+    position: relative;
+}
+
+.image-error::after {
+    content: '⚠️ Ошибка загрузки';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Отображение пустых изображений */
+img:not([src]), 
+img[src=""], 
+img[src^="data:"]:empty {
+    background: linear-gradient(45deg, #f0f0f0 25%, #e0e0e0 25%, #e0e0e0 50%, #f0f0f0 50%, #f0f0f0 75%, #e0e0e0 75%);
+    background-size: 20px 20px;
+    border: 1px dashed #ccc;
+}
+
+/* Для партнеров */
+.partner-logo:not([src]),
+.partner-logo[src=""] {
+    background-color: #e9ecef;
+    border: 2px dashed #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo:not([src])::before,
+.partner-logo[src=""]::before {
+    content: 'Логотип';
+    color: #6c757d;
+    font-size: 12px;
+}
