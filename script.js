@@ -102,7 +102,86 @@ window.onload = function () {
         $(this).addClass('active');
     });
   };
-
+<script>
+// Обработка отправки формы
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form_send');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('send');
+    
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Проверка чекбокса
+            const agreeCheckbox = document.getElementById('oznakomlen');
+            if (!agreeCheckbox.checked) {
+                showMessage('Пожалуйста, отметьте согласие на обработку персональных данных', 'error');
+                return false;
+            }
+            
+            // Блокируем кнопку на время отправки
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(form);
+                
+                // Добавляем дополнительные данные
+                formData.append('_replyto', document.getElementById('email').value);
+                formData.append('agree', agreeCheckbox.checked ? 'Да' : 'Нет');
+                
+                // Отправка через Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    showMessage('✅ Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', 'success');
+                    form.reset();
+                    
+                    // Очистка через 5 секунд
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Ошибка отправки');
+                }
+            } catch (error) {
+                console.error('Ошибка отправки:', error);
+                
+                let userMessage = error.message;
+                if (error.message.includes('Bad form post request')) {
+                    userMessage = 'Неверный формат данных. Проверьте обязательные поля.';
+                } else if (error.message.includes('Failed to fetch')) {
+                    userMessage = 'Проблема с интернет-соединением.';
+                }
+                
+                showMessage(`❌ ${userMessage}`, 'error');
+            } finally {
+                // Восстанавливаем кнопку
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+    
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = type;
+        formMessage.style.display = 'block';
+        formMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+        formMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+        formMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+    }
+});
+</script>
 
     });
 });
