@@ -1160,53 +1160,78 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
 
-    <!-- 12. FORM -->
-    <footer id="form">
-        <div class="container">
-            <div class="form_contacts">
-                <h1>Оставить заявку на<br> поддержку сайта</h1>
-                <h2>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или предыдущий подрядчик не справился с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</h2>
-    
-                <div class="form_contact">
-                    <div class="form_phone"><a href="tel:+78002222673">8 800 222-26-73</a></div>
-                    <div class="form_mail"><a href="mailto:info@drupal-coder.ru">info@drupal-coder.ru</a></div>
+<!-- 12. FORM -->
+<footer id="form">
+    <div class="container">
+        <div class="form_contacts">
+            <h1>Оставить заявку на<br> поддержку сайта</h1>
+            <h2>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или предыдущий подрядчик не справился с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</h2>
+
+            <div class="form_contact">
+                <div class="form_phone"><a href="tel:+78002222673">8 800 222-26-73</a></div>
+                <div class="form_mail"><a href="mailto:info@drupal-coder.ru">info@drupal-coder.ru</a></div>
+            </div>
+        </div>
+
+        <form action="https://formspree.io/f/xvgebbey" method="POST" id="form_send">
+            <h4 id="status"></h4>
+            <div>
+                <input type="text" name="name" id="name" class="form_input" placeholder="Ваше имя" required>
+            </div>
+            <div>
+                <input type="tel" name="phone" id="phone" class="form_input" placeholder="Телефон" required>
+            </div>
+            <div>
+                <input type="email" name="email" id="email" class="form_input" placeholder="E-mail" required>
+            </div>
+            <div>
+                <textarea name="message" id="message" class="form_input" placeholder="Ваш комментарий" required></textarea>
+            </div>
+            
+            <!-- Добавляем скрытые поля для организации и темы -->
+            <input type="hidden" name="org" value="Заявка с сайта Drupal-coder">
+            <input type="hidden" name="_subject" value="Новая заявка на поддержку сайта">
+            
+            <!-- Блок "Я не робот" -->
+            <div class="captcha-container" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 5px; border: 1px solid #ddd;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div style="width: 30px; height: 30px; border: 2px solid #ccc; border-radius: 4px; margin-right: 15px; display: flex; align-items: center; justify-content: center;">
+                        <input type="checkbox" id="captcha-checkbox" name="captcha" style="width: 20px; height: 20px; cursor: pointer;" required>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-weight: bold; font-size: 18px; margin-bottom: 5px;">Я не робот</div>
+                        <div style="font-size: 12px; color: #666; display: flex; gap: 15px;">
+                            <a href="#" style="color: #4285f4; text-decoration: none;">Конфиденциальность</a>
+                            <a href="#" style="color: #4285f4; text-decoration: none;">Условия использования</a>
+                        </div>
+                    </div>
+                    <div style="width: 40px; height: 40px; margin-left: 10px;">
+                        <!-- Иконка reCAPTCHA (замените на реальную иконку если нужно) -->
+                        <svg viewBox="0 0 24 24" width="40" height="40">
+                            <path fill="#4285f4" d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0z"></path>
+                            <path fill="#34a853" d="M12 6.545c3.026 0 5.7 1.936 6.65 4.764l3.936-6.808A12 12 0 0 0 12 0z"></path>
+                            <path fill="#fbbc05" d="M5.585 11.349A5.454 5.454 0 0 1 12 6.545V0C8.21 0 4.831 1.757 2.632 4.501z"></path>
+                            <path fill="#ea4335" d="M12 12c0 .68-.067 1.345-.193 1.985L9.03 8.545H5.585L2.632 4.501A12 12 0 0 0 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-.892-.097-1.76-.265-2.596L18.65 11.309A5.454 5.454 0 0 1 12 12z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
-    
-            <form action="https://formspree.io/f/xvgebbey" method="POST" id="form_send">
-                <h4 id="status"></h4>
-                <div>
-                    <input type="text" name="name" id="name" class="form_input" placeholder="Ваше имя" required>
-                </div>
-                <div>
-                    <input type="tel" name="phone" id="phone" class="form_input" placeholder="Телефон" required>
-                </div>
-                <div>
-                    <input type="email" name="email" id="email" class="form_input" placeholder="E-mail" required>
-                </div>
-                <div>
-                    <textarea name="message" id="message" class="form_input" placeholder="Ваш комментарий" required></textarea>
-                </div>
-                
-                <!-- Добавляем скрытые поля для организации и темы -->
-                <input type="hidden" name="org" value="Заявка с сайта Drupal-coder">
-                <input type="hidden" name="_subject" value="Новая заявка на поддержку сайта">
-                
-                <div>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="agree" id="oznakomlen" required>
-                        <span class="checkbox-custom"></span>
-                        <span class="checkbox-text">Отправляя заявку, я даю согласие на <a href="">обработку своих персональных данных</a></span>
-                    </label>
-                </div>
-                
-                <!-- Убираем reCAPTCHA из формы, так как Formspree может не требовать его -->
-                <button id="send" class="btn_send button_select" type="submit">СВЯЖИТЕСЬ С НАМИ</button>
-                
-                <!-- Сообщение о статусе отправки -->
-                <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
-            </form>
-        </div>
+            
+            <!-- Чекбокс согласия на обработку данных -->
+            <div style="margin: 15px 0;">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="agree" id="oznakomlen" required>
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">Отправляя заявку, я даю согласие на <a href="">обработку своих персональных данных</a></span>
+                </label>
+            </div>
+            
+            <button id="send" class="btn_send button_select" type="submit">СВЯЖИТЕСЬ С НАМИ</button>
+            
+            <!-- Сообщение о статусе отправки -->
+            <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+        </form>
+    </div>
 
         <!-- 13. FOOTER  -->
         <div class="razdel"></div>
