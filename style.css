@@ -1162,10 +1162,26 @@ form button{
     nav li{
         opacity: 1;
     }
+    nav {
+       z-index: 9999;
+   }
     .mobile_head_menu{
+        z-index: 10000;
         position: unset;
         background: unset;
     }
+    header,
+    main,
+    section {
+        position: relative;
+        z-index: 1;
+    }
+      body.menu_active main {
+       pointer-events: none;
+   }
+   body.menu_active nav {
+       pointer-events: auto;
+   }
     .mobile_head_menu .container{
         width: 100% !important;
         margin-left: 0;
