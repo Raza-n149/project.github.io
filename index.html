@@ -566,14 +566,21 @@
                 </div>
             </div>
         </section>
-
+<section id="reviews">              
+    <div class="container">
+        <h1>Отзывы</h1>
+        <div class="txts">
+            <div class="review-container">
+                <!-- Добавляем запятую как фоновый элемент контейнера -->
+                <div class="comma-background">„</div>
 <!-- 9. reviews -->
 <section id="reviews">              
     <div class="container">
-         <img src="reviewsback.svg" class="reviews-background-comma" alt="">
         <h1>Отзывы</h1>
         <div class="txts">
-            <div class="review_bg"></div>
+            <div class="review-container">
+                <!-- Добавляем запятую как фоновый элемент контейнера -->
+                <div class="comma-background">„</div>
             <div class="review-container">
                 <div class="review-slider">
                     <!-- Отзыв 1 -->
@@ -746,6 +753,9 @@
     padding: 60px 0;
 }
 
+.txts {
+    position: relative;
+}
 .review-container {
     position: relative;
     max-width: 900px;
@@ -755,6 +765,21 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     padding: 40px;
     min-height: 500px;
+    overflow: hidden; /* Чтобы запятая не выходила за границы */
+}
+.comma-background {
+    position: absolute;
+    font-size: 450px; /* Уменьшил размер для лучшего позиционирования */
+    font-weight: 100; /* Очень тонкий шрифт */
+    color: rgba(0, 0, 0, 0.05); /* Очень светлый, почти прозрачный */
+    font-family: Georgia, serif; /* Красивый шрифт для запятой */
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg); /* Центрируем и переворачиваем */
+    line-height: 1;
+    pointer-events: none; /* Чтобы не мешала кликам */
+    user-select: none; /* Чтобы нельзя было выделить */
 }
 
 .review-slider {
