@@ -428,12 +428,15 @@ nav li{
 
 /* 5. tarif  */
 /* tarif, container, tarif_categories, tarif_category, tarif_title, tarif_price, tarif_podprise, tarif_items, tarif_item, tarif_button, active, button_select, tarif_individual, subtitle*/
-#tarif{
+ #tarif{
     padding-top: 60px;
     padding-bottom: 51px;
-    background: url(D-background.svg) no-repeat top right;
-    background-size: cover;
+    background: #f0f0f0 url('./D-background.svg') no-repeat top right;
+    background-size: contain;
+    min-height: 400px;
+    position: relative;
 }
+
 .tarif_category{
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.10);
