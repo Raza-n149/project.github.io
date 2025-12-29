@@ -1493,26 +1493,4 @@ form button{
         /* padding-left: 48%; */
         width: 585px;
     }
- 
- .header_tarif_button {
-    position: relative;
-    z-index: 1000 !important;
-}
-
-/* Исправление структуры хедера */
-header#head .container {
-    position: relative;
-    z-index: 1001;
-}
-
-/* Видео и фон ДОЛЖНЫ быть позади контента */
-header video,
-.header_back_img {
-    pointer-events: none; /* Пропускает клики сквозь себя */
-}
- a.header_tarif_button {
-    position: relative;
-    z-index: 99999;
-    transform: translate3d(0, 0, 0);
-}
 }
