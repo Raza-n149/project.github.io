@@ -566,15 +566,12 @@
                 </div>
             </div>
         </section>
-
 <!-- 9. reviews -->
 <section id="reviews">              
     <div class="container">
         <h1>Отзывы</h1>
         <div class="txts">
-            <div class="review-container">
-                <!-- Добавляем запятую как фоновый элемент контейнера -->
-                <div class="comma-background">„</div>
+            <div class="review_bg"></div>
             <div class="review-container">
                 <div class="review-slider">
                     <!-- Отзыв 1 -->
@@ -720,19 +717,18 @@
                     </div>
                 </div>
             </div>
-                        <div class="review-navigation">
+            
+            <div class="review-navigation">
                 <button class="review-prev">
-                    <img src="arrow-left.svg" alt="Предыдущий отзыв" class="arrow-icon">
+                    <img src="arrow-left.svg" alt="Предыдущий отзыв" class="arrow-icon" />
                 </button>
-                
                 <div class="review-counter">
-                    <span class="current-review" style="color: #E30613;">01</span>
-                    <span class="separator" style="color: #000; margin: 0 8px;">/</span>
-                    <span class="total-reviews" style="color: #000;">08</span>
+                    <span class="current-review">01</span>
+                    <span class="separator">/</span>
+                    <span class="total-reviews">08</span>
                 </div>
-                
                 <button class="review-next">
-                    <img src="arrow-right.svg" alt="Следующий отзыв" class="arrow-icon">
+                    <img src="arrow-right.svg" alt="Следующий отзыв" class="arrow-icon" />
                 </button>
             </div>
         </div>
@@ -747,9 +743,6 @@
     padding: 60px 0;
 }
 
-.txts {
-    position: relative;
-}
 .review-container {
     position: relative;
     max-width: 900px;
@@ -759,21 +752,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     padding: 40px;
     min-height: 500px;
-    overflow: hidden; /* Чтобы запятая не выходила за границы */
-}
-.comma-background {
-    position: absolute;
-    font-size: 450px; /* Уменьшил размер для лучшего позиционирования */
-    font-weight: 100; /* Очень тонкий шрифт */
-    color: rgba(0, 0, 0, 0.05); /* Очень светлый, почти прозрачный */
-    font-family: Georgia, serif; /* Красивый шрифт для запятой */
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(180deg); /* Центрируем и переворачиваем */
-    line-height: 1;
-    pointer-events: none; /* Чтобы не мешала кликам */
-    user-select: none; /* Чтобы нельзя было выделить */
 }
 
 .review-slider {
