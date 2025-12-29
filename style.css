@@ -874,7 +874,181 @@ span{
 .b22{
     margin-left: 46px;
 }
+.txts {
+    padding: 20px 15px;
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+}
 
+/* Заглушка для тени */
+.review_bg {
+    left: 10px;
+    right: 10px;
+    top: -10px;
+    bottom: -10px;
+}
+
+.review_bg:after {
+    left: 20px;
+    right: 20px;
+    top: -8px;
+    bottom: -8px;
+}
+
+/* Иконка кавычки */
+.text-slider:before {
+    top: -5px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Текст отзыва */
+.slidertext_text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #050C33;
+    text-align: left;
+}
+
+/* Имя и должность */
+.slidertext_names {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #838b9c;
+    margin-bottom: 5px;
+}
+
+/* Ссылка на сайт */
+.slidertext_names a {
+    color: #050c33 !important;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Блок с информацией об авторе */
+.rero1 {
+    padding: 15px 0;
+}
+
+/* Номера слайдов */
+.review_nums {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+/* Кнопки навигации */
+.review_btns button {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 5px;
+}
+
+/* Контейнер кнопок */
+.button_slide {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Разделитель между текстом и управлением */
+.row_review_btns {
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .txts {
+        padding: 15px 10px;
+        margin-top: 20px;
+    }
+    
+    .slidertext_text {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .slidertext_names {
+        font-size: 11px;
+    }
+    
+    .text-slider:before {
+        width: 20px;
+        height: 20px;
+        left: 5px;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 768px) and (max-width: 991px) {
+    .txts {
+        padding: 30px 25px;
+        margin-top: 40px;
+    }
+    
+    .review_bg {
+        left: 20px;
+        right: 20px;
+        top: -15px;
+    }
+    
+    .review_bg:after {
+        left: 40px;
+        right: 40px;
+        top: -12px;
+    }
+    
+    .slidertext_text {
+        font-size: 16px;
+    }
+    
+    .slidertext_names {
+        font-size: 14px;
+    }
+}
+
+/* Убираем фоновую картинку в мобильной версии */
+@media (max-width: 767px) {
+    #backreview {
+        display: none;
+    }
+    
+    .text-slider .row:nth-child(2) {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+    
+    /* Делаем отзыв в виде карточки */
+    .txts {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+}
+
+/* ... остальной существующий CSS ... */
+
+/* В конце файла идут существующие медиа-запросы */
+/* Добавьте новые медиа-запросы перед закрывающей фигурной скобкой или в соответствующие секции */
+
+@media (min-width: 768px){
+    /* Существующие стили для планшетов остаются */
+}
+
+@media (min-width: 992px){
+    /* Существующие стили для десктопов остаются */
+}
+
+@media (min-width: 1200px){
+    /* Существующие стили для больших экранов остаются */
+}
 
 /* 10. partners */
 
