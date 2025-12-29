@@ -174,17 +174,18 @@ button:hover{
     opacity: 0.7;
 }
 
-/* МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ - ИСПРАВЛЕНИЯ */
+/* МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ - ФИКСИРОВАННАЯ ПАНЕЛЬ ВНИЗУ */
 
-/* Бургер-меню должно быть фиксированным внизу */
+/* Фиксированная панель меню внизу */
 .mobile_head_menu {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     background: #000;
     z-index: 10000;
-    height: 35px;
+    height: 50px; /* Увеличиваем высоту для удобства тапа */
+    border-top: 1px solid #333;
 }
 
 /* Контейнер для логотипа и бургера */
@@ -193,43 +194,83 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    position: relative;
+    padding: 0 20px;
 }
 
-/* Бургер-меню должно быть кликабельным */
+/* Бургер-меню */
 .burger_menu {
-    width: 23px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 10001;
     position: relative;
 }
 
-/* Навигация - выдвигается снизу */
+.burger_menu_1,
+.burger_menu_1:after,
+.burger_menu_1:before {
+    width: 20px;
+    height: 2px;
+    border-radius: 3px;
+    background: #fff;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.burger_menu_1:before {
+    content: "";
+    position: absolute;
+    top: -6px;
+}
+
+.burger_menu_1:after {
+    content: "";
+    position: absolute; 
+    top: 6px;
+}
+
+.menu_active .burger_menu_1 {
+    background: transparent;
+}
+
+.menu_active .burger_menu_1:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu_active .burger_menu_1:after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* Навигация - скрыта по умолчанию, открывается вверх */
 nav {
     z-index: 9999;
     position: fixed;
     left: 0;
-    bottom: -100%;
-    width: 100vw;
+    bottom: -100%; /* Скрыто за экраном */
+    width: 100%;
     background: #000;
-    font-size: 12px;
-    transition: 0.3s ease-in-out;
-    max-height: 80vh; /* Ограничиваем высоту меню */
+    font-size: 14px;
+    transition: bottom 0.4s ease-in-out;
+    max-height: 70vh;
     overflow-y: auto;
-    border-top: 1px solid #333;
+    border-top: 1px solid #444;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Когда меню открыто */
+/* Когда меню открыто - выезжает снизу вверх */
 .menu_active nav {
-    bottom: 35px !important;
+    bottom: 50px !important; /* Останавливается над фиксированной панелью */
 }
 
 /* Список меню */
 .menu {
-    max-height: 79vh;
+    max-height: 69vh;
     overflow-y: auto;
     background: #000;
     padding: 0;
@@ -244,16 +285,21 @@ nav ul {
 
 nav li {
     list-style-type: none;
-    border-top: 1px #333 solid;
-    padding: 12px 20px;
-    opacity: 0.8;
+    border-top: 1px solid #333;
+    padding: 15px 20px;
     cursor: pointer;
     position: relative;
+    transition: background-color 0.2s;
 }
 
-/* Первый элемент без границы сверху */
+/* Первый элемент без верхней границы */
 nav li:first-child {
     border-top: none;
+}
+
+/* Эффект при нажатии */
+nav li:active {
+    background-color: #222;
 }
 
 /* Ссылки в меню */
@@ -262,23 +308,25 @@ nav li:first-child {
     text-decoration: none;
     display: block;
     width: 100%;
+    font-size: 14px;
 }
 
 /* Подкатегории */
 .menu_podcat > ul {
     margin: 0;
     padding: 0;
-    display: none; /* Скрываем по умолчанию */
+    display: none;
+    background: #111;
 }
 
 .menu_podcat.active > ul {
-    display: block; /* Показываем при активном классе */
+    display: block;
 }
 
 .menu_podcat > ul li {
     padding-left: 30px;
-    background: #111;
     border-top: 1px solid #222;
+    background: #111;
 }
 
 /* Стрелка для подкатегорий */
@@ -286,26 +334,22 @@ nav li:first-child {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    padding-right: 15px;
+    padding-right: 20px;
+    width: 100%;
 }
 
 .menu_podcat span:after {
     content: "▼";
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 10px;
     transition: transform 0.3s;
 }
 
 .menu_podcat.active span:after {
-    content: "▼";
-    transform: rotate(180deg);
-}
-
-/* Ховер для подкатегорий */
-.menu_podcat > ul li:hover {
-    background-color: #8e1401;
+    transform: translateY(-50%) rotate(180deg);
 }
 
 /* Текущая страница */
@@ -314,33 +358,40 @@ nav li:first-child {
     font-weight: bold;
 }
 
-/* Когда меню открыто - только скрываем скролл страницы */
+/* Когда меню открыто - скрываем скролл страницы */
 body.menu_active {
     overflow: hidden;
 }
 
-/* НИКАКИХ pointer-events НЕ ДОБАВЛЯЕМ!
-   Текст должен оставаться доступным под меню */
-
-/* Затемнение фона при открытом меню (опционально) */
-body.menu_active::before {
-    content: "";
+/* Затемнение фона при открытом меню */
+.menu_overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9998; /* Под меню, но над контентом */
-    pointer-events: auto; /* Можно кликать чтобы закрыть меню */
-}
-
-/* Делаем так, чтобы клик на затемнение закрывал меню */
-body.menu_active::before {
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
     cursor: pointer;
 }
 
-/* ДЕСКТОПНАЯ ВЕРСИЯ - НЕ ТРОГАЕМ (оставляем как есть) */
+.menu_active .menu_overlay {
+    display: block;
+}
+
+/* Основной контент должен иметь отступ снизу для фиксированной панели */
+body {
+    padding-bottom: 50px !important;
+}
+
+/* Заголовок и другие фиксированные элементы должны иметь дополнительный z-index */
+header:not(.mobile_head_menu) {
+    position: relative;
+    z-index: 1;
+}
+
+/* ДЕСКТОПНАЯ ВЕРСИЯ - НЕ ТРОГАЕМ */
 @media (min-width: 768px) {
     .mobile_head_menu {
         position: unset;
@@ -348,6 +399,7 @@ body.menu_active::before {
         z-index: auto;
         height: auto;
         width: auto;
+        border-top: none;
     }
     
     .burger_menu {
@@ -363,6 +415,8 @@ body.menu_active::before {
         z-index: auto;
         max-height: none;
         border-top: none;
+        box-shadow: none;
+        bottom: auto !important;
     }
     
     .menu {
@@ -375,8 +429,13 @@ body.menu_active::before {
         overflow: auto;
     }
     
-    body.menu_active::before {
-        display: none;
+    .menu_overlay {
+        display: none !important;
+    }
+    
+    /* Убираем отступ для десктопа */
+    body {
+        padding-bottom: 0 !important;
     }
     
     /* Все остальные стили для десктопного меню остаются как есть в файле */
