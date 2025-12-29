@@ -340,7 +340,133 @@ nav li{
 body {
     padding-bottom: 50px !important;
 }
-/* services container podzag1  services_parts services_part_sor  services_imgs  podzag1  */
+
+/* ================= ИСПРАВЛЕНИЯ ДЛЯ ДЕСКТОПНОЙ ВЕРСИИ ================= */
+
+/* 1. Убираем логотип в десктопной версии */
+@media (min-width: 768px) {
+    .mobile_head_menu .logo_a {
+        display: none !important;
+    }
+    
+    .mobile_head_menu .container {
+        justify-content: center !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Исправляем меню - убираем наложение */
+    .menu {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px 20px !important;
+        border-bottom: none !important;
+        max-height: none !important;
+        overflow: visible !important;
+        background: transparent !important;
+    }
+    
+    .menu > li {
+        margin: 0 !important;
+        padding: 5px 0 !important;
+        border-top: none !important;
+        opacity: 1 !important;
+    }
+    
+    .menu a {
+        color: #fff !important;
+        font-size: 14px !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Исправляем подменю */
+    .menu_podcat > ul {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 200px !important;
+        margin-top: 5px !important;
+        background: #f14d34 !important;
+    }
+    
+    .menu_podcat > ul li {
+        padding: 8px 15px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .menu_podcat span:after {
+        display: none !important;
+    }
+}
+
+/* 2. Убираем фоновое изображение/видео в хедере на десктопе */
+@media (min-width: 768px) {
+    /* Убираем затемнение */
+    header:before {
+        display: none !important;
+    }
+    
+    /* Убираем видео/изображение если есть */
+    header video,
+    .header_back_img {
+        display: none !important;
+    }
+    
+    /* Меняем фон хедера на белый */
+    header {
+        background: #fff !important;
+        color: #000 !important;
+        padding-bottom: 40px !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+    
+    /* Меняем цвет текста в хедере */
+    header h1,
+    header h2,
+    header .zag,
+    header .podzag {
+        color: #000 !important;
+    }
+    
+    /* Исправляем кнопку */
+    .header_tarif_button button {
+        color: #F14D34 !important;
+        border-color: #F14D34 !important;
+    }
+    
+    .header_tarif_button button:hover {
+        color: #fff !important;
+        background: #F14D34 !important;
+    }
+}
+
+/* 3. Для планшетов - уменьшаем шрифт меню если не помещается */
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu a {
+        font-size: 12px !important;
+    }
+    
+    .menu {
+        gap: 8px 15px !important;
+    }
+}
+
+/* 4. Для больших экранов - нормальный размер */
+@media (min-width: 992px) {
+    .menu a {
+        font-size: 16px !important;
+    }
+    
+    .menu {
+        gap: 15px 30px !important;
+    }
+}
+
+/* ================= КОНЕЦ ИСПРАВЛЕНИЙ ================= */
+
+/* services */
 #services h1 {
     text-align: left;
     color: #050C33;
@@ -382,7 +508,6 @@ body {
     width: 114px;
     height: 71px;
 }
-
 
 /* 3. support */
 /*supports_list, div, img supports, container, support_num, zag, podzag, */
