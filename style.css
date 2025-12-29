@@ -1510,4 +1510,9 @@ header video,
 .header_back_img {
     pointer-events: none; /* Пропускает клики сквозь себя */
 }
+ a.header_tarif_button {
+    position: relative;
+    z-index: 99999;
+    transform: translate3d(0, 0, 0);
+}
 }
