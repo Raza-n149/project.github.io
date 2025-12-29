@@ -695,187 +695,267 @@ span{
 
 
 /* 9. reviews */
-
-#reviews{
-    padding-bottom: 90px;
-}
-#reviewsdiv {
+/* Стили для отзывов как на изображении */
+#reviews {
     position: relative;
+    background: #f8f9fa;
+    padding: 60px 0;
 }
 
-#backreview {
-    display: flex;
-    width: 26vw;
-    height: 26vh;
-    opacity: 0.04;
+.review-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    min-height: 500px;
+    overflow: hidden; /* Важно для фоновой запятой */
+}
+
+/* Фоновая запятая - исправленная */
+.review-container::before {
+    content: "„";
     position: absolute;
-    margin-top: -90px;
-    margin-left: -6vw;
+    font-size: 400px; /* Уменьшил размер */
+    font-weight: 100; /* Очень тонкая */
+    color: rgba(0, 0, 0, 0.05); /* Очень прозрачная */
+    font-family: Georgia, serif;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    line-height: 1;
+    pointer-events: none;
+    opacity: 0.3; /* Делаем менее заметной */
 }
-.text-slider .row{
-    margin: unset !important;
+
+.review-slider {
+    position: relative;
+    z-index: 2; /* Контент над запятой */
 }
-.txts1{
-    width: 100%;
+
+.review-item {
+    display: none;
 }
-.rero1{
-    width: 100%;
-    padding: 20px 15px;
+
+.review-item.active {
+    display: block;
 }
-.text-slider .row:nth-child(2){
+
+/* Исправляем заголовок отзыва */
+.review-header {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    justify-content: center;
-    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0; /* Более тонкая линия */
+    padding-bottom: 20px;
 }
-.slidertext_text{
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 28px;
+
+.review-logo {
+    width: 80px; /* Уменьшил размер */
+    height: 80px;
+    object-fit: contain;
+    margin-right: 20px;
+    border: none;
+    border-radius: 0;
 }
-.slidertext_names{
-    font-size: 14px;
-    line-height: 1.2;
-    color: #838b9c;
+
+.review-title {
+    flex-grow: 1;
 }
-.slidertext_names a{
-    color: #050c33 !important;
+
+.review-company {
+    font-size: 20px; /* Уменьшил размер */
+    font-weight: 700; /* Bold, но не слишком жирный */
+    color: #000; /* Черный цвет */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.review-website {
+    font-size: 14px; /* Уменьшил размер */
+    color: #666;
+    letter-spacing: 1px; /* Уменьшил интервал */
+    text-transform: lowercase;
+    font-weight: 400;
+}
+
+/* Основной текст отзыва - КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ */
+.slidertext_text {
+    font-size: 15px; /* Меньше размер шрифта */
+    line-height: 1.5; /* Меньше межстрочный интервал */
+    color: #333; /* Темно-серый, не черный */
+    margin-bottom: 20px;
+    text-align: left; /* Выравнивание по левому краю */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Более нейтральный шрифт */
+    font-weight: 400; /* Нормальная толщина */
+    padding-right: 10px; /* Небольшой отступ справа */
+}
+
+.slidertext_text strong {
+    font-weight: 600; /* Полужирный, не жирный */
+}
+
+/* Блок с подписью */
+.slidertext_names {
+    font-size: 13px; /* Меньше размер */
+    color: #666; /* Серый цвет */
+    border-top: 1px solid #e0e0e0; /* Более тонкая линия */
+    padding-top: 15px;
+    margin-top: 15px;
+    line-height: 1.4; /* Меньше межстрочный интервал */
+}
+
+.slidertext_names strong {
+    font-weight: 600; /* Полужирный */
+    color: #000; /* Черный цвет */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.slidertext_names a {
+    color: #0066cc; /* Синяя ссылка */
+    text-decoration: none;
+    font-weight: 400; /* Нормальная толщина */
+    font-size: 13px;
+}
+
+.slidertext_names a:hover {
     text-decoration: underline;
 }
-.row_review_btns{
-    width: 100% !important;
-    border-top: 1px solid #cdcdcd;
-}
-.text-slider .row:nth-child(2) > div,
-.button_slide{
-    flex-wrap: nowrap;
+
+/* Навигация */
+.review-navigation {
     display: flex;
-}
-.button_slide{
+    justify-content: center;
     align-items: center;
-}
-.aa{
+    margin-top: 30px;
+    gap: 25px;
     position: relative;
-    
-}
-.aa > div:not(:nth-child(1)){
-    display: none;
-    opacity: 0;
-}
-.aa > div{
-    transition: 0.5s;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.text-slider{
-    position: relative;
-    font-size: 17px;
+    z-index: 3;
 }
 
-.text-slider:before{
-    content: url(right-quote-sign.svg);
-    position: absolute;
-    top: -10px;
-    left: 0;
-}
-.txts{
-    position: relative;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    background: #FFF;
-    box-shadow: 0px 4px 60px 0px rgba(161, 161, 161, 0.25);
-    /* padding: 67px 80px 66.5px 128px; */
-    display: flex;
-    width: 100%;
-    padding: 15px;
-    position: relative;
-    z-index: 6;
-    opacity: 1;
-    margin-top: 120px;
-}
-.review_bg {
-    content: "";
-    display: block;
-    background: #fff;
-    opacity: .5;
-    border: 1px solid rgba(0,0,0,.1);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 60px rgba(162,162,162,.25);
-    border-radius: 5px;
-    position: absolute;
-    top: -40px;
-    bottom: 0;
-    left: 15px;
-    right: 15px;
-    z-index: -2;
-}
-.review_bg:after {
-    content: "";
-    display: block;
-    background: #fff;
-    opacity: .34;
-    border: 1px solid rgba(0,0,0,.1);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 60px rgba(162,162,162,.25);
-    border-radius: 5px;
-    position: absolute;
-    top: -32px;
-    bottom: 0;
-    left: 30px;
-    right: 30px;
-    z-index: -3;
-}
-.txts:before,
-.review_bg:before {
-    content: "";
-    display: block;
-    background: #fff;
-    box-sizing: border-box;
-    border-radius: 5px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-}
-.txts .row{
-    flex-wrap: nowrap;
-    width: 100%;
-    align-items: center;
-}
-.txts1{
-    flex-direction: column;
-}
-.review_nums{
-    color:#E0E0E0;
-    font-size: 28px;
-}
-.review_nums.ednum{
-    color: #050C33 !important;
-}
-.rwns{
-    margin: 0 8px;
-}
-
-.review_btns button{
-    width: unset;
+.review-prev, .review-next {
+    background: transparent;
     border: none;
-}
-.review_btns button:hover{
-    background: unset !important;
-    opacity: 0.6;
-}
-.b11{
-    margin-right: 46px; 
-}
-.b22{
-    margin-left: 46px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    border: 1px solid #ddd;
 }
 
+.review-prev:hover, .review-next:hover {
+    background: #f5f5f5;
+}
 
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.review-counter {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.current-review {
+    color: #E30613; /* Красный цвет для текущего номера */
+    font-weight: 700;
+}
+
+.separator {
+    color: #999;
+}
+
+.total-reviews {
+    color: #666;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Для активного отзыва */
+.review-item.active {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    .review-container {
+        padding: 25px 20px;
+        min-height: auto;
+    }
+    
+    .review-container::before {
+        font-size: 250px;
+        opacity: 0.15;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .review-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .slidertext_text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .review-company {
+        font-size: 18px;
+    }
+    
+    .review-website {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-container::before {
+        font-size: 180px;
+    }
+    
+    .slidertext_text {
+        font-size: 13px;
+    }
+    
+    .review-navigation {
+        gap: 15px;
+    }
+    
+    .review-prev, .review-next {
+        width: 35px;
+        height: 35px;
+    }
+}
 
 /* 10. partners */
 
