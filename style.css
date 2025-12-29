@@ -1459,4 +1459,14 @@ form button{
         /* padding-left: 48%; */
         width: 585px;
     }
+ .form_phone:before{
+    content: url(phone.svg);
+    width: 24px;
+    height: 24px;
+}
+.form_mail:before{
+    content: url(mail.svg);
+    width: 28px;
+    height: 20px;
+}
 }
