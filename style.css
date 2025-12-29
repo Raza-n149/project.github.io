@@ -400,49 +400,7 @@ body {
     }
 }
 
-/* 2. Убираем фоновое изображение/видео в хедере на десктопе */
-@media (min-width: 768px) {
-    /* Убираем затемнение */
-    header:before {
-        display: none !important;
-    }
-    
-    /* Убираем видео/изображение если есть */
-    header video,
-    .header_back_img {
-        display: none !important;
-    }
-    
-    /* Меняем фон хедера на белый */
-    header {
-        background: #fff !important;
-        color: #000 !important;
-        padding-bottom: 40px !important;
-        position: relative !important;
-        overflow: visible !important;
-    }
-    
-    /* Меняем цвет текста в хедере */
-    header h1,
-    header h2,
-    header .zag,
-    header .podzag {
-        color: #000 !important;
-    }
-    
-    /* Исправляем кнопку */
-    .header_tarif_button button {
-        color: #F14D34 !important;
-        border-color: #F14D34 !important;
-    }
-    
-    .header_tarif_button button:hover {
-        color: #fff !important;
-        background: #F14D34 !important;
-    }
-}
-
-/* 3. Для планшетов - уменьшаем шрифт меню если не помещается */
+/* 2. Для планшетов - уменьшаем шрифт меню если не помещается */
 @media (min-width: 768px) and (max-width: 991px) {
     .menu a {
         font-size: 12px !important;
@@ -453,7 +411,7 @@ body {
     }
 }
 
-/* 4. Для больших экранов - нормальный размер */
+/* 3. Для больших экранов - нормальный размер */
 @media (min-width: 992px) {
     .menu a {
         font-size: 16px !important;
