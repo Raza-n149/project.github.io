@@ -874,7 +874,27 @@ span{
 .b22{
     margin-left: 46px;
 }
+/* Фоновая запятая для отзывов */
+.review-container:before {
+    content: "";
+    background: url('reviewsback.svg') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.05; /* Очень светлая */
+    z-index: 0;
+    pointer-events: none;
+}
 
+/* Поднимаем контент над фоном */
+.review-slider {
+    position: relative;
+    z-index: 1;
+}
 
 /* 10. partners */
 
