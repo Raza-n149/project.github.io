@@ -874,13 +874,8 @@ span{
 .b22{
     margin-left: 46px;
 }
-.reviews-background-comma {
-    opacity: 0.3; /* Делаем полупрозрачной */
-    /* или */
-    filter: brightness(1.2); /* Делаем светлее */
-    /* или */
-    filter: contrast(0.7) brightness(1.2); /* Комбинация */
-}
+
+
 
 /* 10. partners */
 
