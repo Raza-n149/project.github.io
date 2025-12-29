@@ -85,6 +85,53 @@
         </div>
     </div>
 </head>
+    <script>
+// Мобильное меню
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger_menu');
+    const body = document.body;
+    const overlay = document.querySelector('.menu_overlay');
+    
+    if (!burgerMenu) {
+        console.error('Бургер-меню не найдено!');
+        return;
+    }
+    
+    console.log('Меню загружено, бургер найден');
+    
+    // Открытие/закрытие основного меню
+    burgerMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+        console.log('Клик по бургеру');
+        body.classList.toggle('menu_active');
+        console.log('Класс menu_active:', body.classList.contains('menu_active'));
+    });
+    
+    // Закрытие меню при клике на оверлей
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            console.log('Клик по оверлею');
+            body.classList.remove('menu_active');
+            // Закрываем все подменю
+            document.querySelectorAll('.menu_podcat').forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+    }
+    
+    // Открытие/закрытие подкатегорий
+    document.querySelectorAll('.menu_podcat > span').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Клик по подкатегории');
+            
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+});
+</script>
 <body>
 
     <!-- 1 -->
