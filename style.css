@@ -1675,4 +1675,53 @@ form button{
         /* padding-left: 48%; */
         width: 585px;
     }
+ @media (min-width: 768px){
+    /* ... все существующие стили ... */
+    
+    /* Добавить эти стили в существующий медиа-запрос */
+    .mobile_head_menu {
+        position: unset;
+        background: unset;
+        z-index: auto;
+        height: auto;
+        width: auto;
+        border-top: none;
+    }
+    
+    .burger_menu {
+        display: none;
+    }
+    
+    nav {
+        position: unset;
+        background: transparent;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        z-index: auto;
+        max-height: none;
+        border-top: none;
+        box-shadow: none;
+        bottom: auto !important;
+    }
+    
+    .menu {
+        max-height: none;
+        overflow: visible;
+        background: transparent;
+    }
+    
+    body.menu_active {
+        overflow: auto;
+    }
+    
+    .menu_overlay {
+        display: none !important;
+    }
+    
+    /* Убираем отступ для десктопа */
+    body {
+        padding-bottom: 0 !important;
+    }
+}
 }
