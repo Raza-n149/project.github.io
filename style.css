@@ -1005,11 +1005,11 @@ span{
     transform: translateY(-50%);
 }
 .form_phone:before{
-    content: url(imgs/phone.svg);
+    content: url(phone.svg);
     width: 24px;
 }
 .form_mail:before{
-    content: url(imgs/mail.svg);
+    content: url(mail.svg);
     width: 28px;
 }
 
@@ -1459,14 +1459,4 @@ form button{
         /* padding-left: 48%; */
         width: 585px;
     }
- .form_phone:before{
-    content: url(phone.svg);
-    width: 24px;
-    height: 24px;
-}
-.form_mail:before{
-    content: url(mail.svg);
-    width: 28px;
-    height: 20px;
-}
 }
