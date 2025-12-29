@@ -697,48 +697,38 @@ span{
 }
 
 
-/* 9. reviews */
-/* Стили для отзывов как на изображении */
+/* ===============================
+   ФОН — НЕ МЕНЯЕМ
+================================ */
 #reviews {
     position: relative;
     background: #f8f9fa;
     padding: 60px 0;
 }
 
+/* ===============================
+   КОНТЕЙНЕР ОТЗЫВА
+================================ */
 .review-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
-    background: white;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    padding: 40px;
-    min-height: 500px;
-    overflow: hidden; /* Важно для фоновой запятой */
+    padding: 70px 90px;
 }
 
-/* Фоновая запятая - исправленная */
-.review-container::before {
-    content: "„";
-    position: absolute;
-    font-size: 400px; /* Уменьшил размер */
-    font-weight: 100; /* Очень тонкая */
-    color: rgba(0, 0, 0, 0.05); /* Очень прозрачная */
-    font-family: Georgia, serif;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(180deg);
-    line-height: 1;
-    pointer-events: none;
-    opacity: 0.3; /* Делаем менее заметной */
-}
-
+/* ===============================
+   СЛАЙДЕР
+================================ */
 .review-slider {
     position: relative;
-    z-index: 2; /* Контент над запятой */
 }
 
+/* ===============================
+   ОТЗЫВ
+================================ */
 .review-item {
     display: none;
 }
@@ -747,145 +737,133 @@ span{
     display: block;
 }
 
-/* Исправляем заголовок отзыва */
+/* ===============================
+   ШАПКА ОТЗЫВА (как на фото)
+================================ */
 .review-header {
     display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-    border-bottom: 1px solid #e0e0e0; /* Более тонкая линия */
-    padding-bottom: 20px;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 45px;
 }
 
 .review-logo {
-    width: 80px; /* Уменьшил размер */
-    height: 80px;
+    width: 160px;
+    height: auto;
     object-fit: contain;
-    margin-right: 20px;
     border: none;
     border-radius: 0;
 }
 
-.review-title {
-    flex-grow: 1;
-}
-
+/* ===============================
+   НАЗВАНИЕ КОМПАНИИ
+================================ */
 .review-company {
-    font-size: 20px; /* Уменьшил размер */
-    font-weight: 700; /* Bold, но не слишком жирный */
-    color: #000; /* Черный цвет */
-    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #222;
+    margin-bottom: 6px;
 }
 
 .review-website {
-    font-size: 14px; /* Уменьшил размер */
-    color: #666;
-    letter-spacing: 1px; /* Уменьшил интервал */
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 6px;
     text-transform: lowercase;
-    font-weight: 400;
+    color: #888;
 }
 
-/* Основной текст отзыва - КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ */
+/* ===============================
+   ТЕКСТ ОТЗЫВА
+================================ */
 .slidertext_text {
-    font-size: 15px; /* Меньше размер шрифта */
-    line-height: 1.5; /* Меньше межстрочный интервал */
-    color: #333; /* Темно-серый, не черный */
-    margin-bottom: 20px;
-    text-align: left; /* Выравнивание по левому краю */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Более нейтральный шрифт */
-    font-weight: 400; /* Нормальная толщина */
-    padding-right: 10px; /* Небольшой отступ справа */
+    font-size: 18px;
+    line-height: 1.9;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 45px;
+    max-width: 800px;
 }
 
 .slidertext_text strong {
-    font-weight: 600; /* Полужирный, не жирный */
+    font-weight: 400;
 }
 
-/* Блок с подписью */
+/* ===============================
+   ПОДПИСЬ
+================================ */
 .slidertext_names {
-    font-size: 13px; /* Меньше размер */
-    color: #666; /* Серый цвет */
-    border-top: 1px solid #e0e0e0; /* Более тонкая линия */
-    padding-top: 15px;
-    margin-top: 15px;
-    line-height: 1.4; /* Меньше межстрочный интервал */
-}
-
-.slidertext_names strong {
-    font-weight: 600; /* Полужирный */
-    color: #000; /* Черный цвет */
-    display: block;
-    margin-bottom: 5px;
+    font-size: 15px;
+    color: #555;
 }
 
 .slidertext_names a {
-    color: #0066cc; /* Синяя ссылка */
+    color: #000;
     text-decoration: none;
-    font-weight: 400; /* Нормальная толщина */
-    font-size: 13px;
 }
 
 .slidertext_names a:hover {
     text-decoration: underline;
 }
 
-/* Навигация */
+/* ===============================
+   НАВИГАЦИЯ СПРАВА
+================================ */
 .review-navigation {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-    gap: 25px;
-    position: relative;
-    z-index: 3;
+    gap: 18px;
 }
 
-.review-prev, .review-next {
-    background: transparent;
+.review-prev,
+.review-next {
+    background: none;
     border: none;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    transition: opacity 0.3s;
-    border-radius: 50%;
-    border: 1px solid #ddd;
+    padding: 0;
 }
 
-.review-prev:hover, .review-next:hover {
-    background: #f5f5f5;
-}
-
+/* ===============================
+   СТРЕЛКИ
+================================ */
 .arrow-icon {
-    width: 20px;
-    height: 20px;
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    width: 22px;
+    height: 22px;
+    filter: none;
+    opacity: 0.8;
 }
 
+.review-prev:hover .arrow-icon,
+.review-next:hover .arrow-icon {
+    opacity: 1;
+}
+
+/* ===============================
+   СЧЁТЧИК
+================================ */
 .review-counter {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    font-size: 32px;
+    font-weight: 300;
+    color: #000;
 }
 
 .current-review {
-    color: #E30613; /* Красный цвет для текущего номера */
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .separator {
-    color: #999;
+    margin: 0 4px;
 }
 
 .total-reviews {
-    color: #666;
+    font-weight: 300;
 }
 
 /* Анимация */
