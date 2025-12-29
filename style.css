@@ -92,6 +92,13 @@ header video {
     min-height: 100%;
     min-width: 100%;
 }
+.header_tarif_button {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
 header .container{
     position: relative;
     left: 0;
@@ -107,6 +114,7 @@ header:before{
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
+    pointer-events: none;
 }
 .header_back_img{
     position: absolute;
@@ -1119,7 +1127,16 @@ form button{
     }
   }
 
+@media (max-width: 768px) {
+    .head_f {
+        text-align: center;
+    }
 
+    .header_tarif_button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 @media (min-width: 768px){
     .fleximg li:not(.case_d2) {
         width: 32% !important;
